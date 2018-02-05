@@ -25,10 +25,23 @@ namespace prg2._1_intro
            
             Console.WriteLine();
 
-            while(students.Length != 10)
+            while(students.Count != 10)
             {
                 students.Add("empty spot");
             }
+
+            for(int x = 0; x < 10; x++)
+            {
+                Console.WriteLine(x);
+            }
+
+            Dictionary<string,int> studentGrades = new Dictionary<string,int>();
+            studentGrades["Yoon"] = 110;
+            studentGrades["Gallagher"] = 190;
+            studentGrades["Engel"] = 1000;
+            studentGrades["Slosar"] = 50;
+
+
 
             /*
             

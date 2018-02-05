@@ -13,8 +13,17 @@ namespace _0_main
         static void Main(string[] args)
         {
            Console.WriteLine("Launching main");
-        
-           Intro i = new Intro(args);
+           CoffeeMaker lifesaver = new CoffeeMaker();
+           lifesaver.AddGrains(5);
+           
+           // hw2 now = new hw2();
+           // now.run();
+
+
+
+
+
+           //Intro i = new Intro(args);
            //test(args);
           
            Console.ReadKey();
