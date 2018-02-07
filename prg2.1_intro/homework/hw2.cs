@@ -10,12 +10,13 @@ namespace prg2._1_intro
             Console.Write("Enter the year: ");
             string year = Console.ReadLine();
             int yer = (int)Convert.ChangeType(year,typeof(int));
-            for(int x = 0; x<21; x++)
+            for(int x = 0; x<20;)
             {   
                 if(yer % 400 == 0)
                 {
                     Console.WriteLine(yer + " is a leap year.");
                     yer = yer + 1;
+                    x++;
                 }
                 else if(yer % 100 == 0)
                 {
@@ -25,6 +26,7 @@ namespace prg2._1_intro
                 {
                     Console.WriteLine(yer + " is a leap year.");
                     yer = yer + 1;
+                    x++;
                 }
                 else
                 {
