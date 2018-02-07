@@ -13,11 +13,11 @@ namespace _0_main
         static void Main(string[] args)
         {
            Console.WriteLine("Launching main");
-           CoffeeMaker lifesaver = new CoffeeMaker();
-           lifesaver.AddGrains(5);
+          // CoffeeMaker lifesaver = new CoffeeMaker();
+          // lifesaver.AddGrains(5);
            
-           // hw2 now = new hw2();
-           // now.run();
+            hw2 now = new hw2();
+            now.run();
 
 
 
