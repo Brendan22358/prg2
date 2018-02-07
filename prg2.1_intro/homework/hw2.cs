@@ -10,6 +10,7 @@ namespace prg2._1_intro
             Console.Write("Enter the year: ");
             string year = Console.ReadLine();
             int yer = (int)Convert.ChangeType(year,typeof(int));
+            yer = yer + 1;
             for(int x = 0; x<20;)
             {   
                 if(yer % 400 == 0)
