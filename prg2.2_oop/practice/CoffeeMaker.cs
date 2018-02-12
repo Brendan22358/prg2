@@ -11,6 +11,7 @@ namespace prg2._2_oop
         bool on_off;
         double grains_amount;
         double MAX_GRAINS_AMOUNT;
+        bool FilterIn;
         //hotplate
 
         public CoffeeMaker()
@@ -22,6 +23,7 @@ namespace prg2._2_oop
             grains_amount = 0;
             MAX_GRAINS_AMOUNT = 6;
             on_off = false;
+            FilterIn = true;
         }
         
 
@@ -39,11 +41,25 @@ namespace prg2._2_oop
         
         public void InsertFilter()
         {
-
-        }
-        public void AddWater()
+            if(FilterIn == true)
+            {
+                throw new Exception("Filter Already In!");
+            }
+            else
+            {
+                FilterIn = true;
+            }
+        }    
+        public void AddWater(double WaterAmountToAdd)
         {
-
+            if(WaterAmountToAdd+water_amount>MAX_WATER_AMOUNT)
+            {
+                throw new Exception("Too much water!!!");
+            }
+            else
+            {
+                water_amount+=WaterAmountToAdd;
+            }
         }
     }
 }
