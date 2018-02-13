@@ -11,13 +11,14 @@ namespace _0_main
     class Program
     {
         static void Main(string[] args)
-        {
+        {   
             Console.WriteLine("Launching main");
-            CoffeeMaker lifesaver = new CoffeeMaker();
-            lifesaver.AddGrains(5);
-           
+        
             //hw2 now = new hw2();
             //now.run();
+
+          
+            
 
 
 
@@ -25,8 +26,7 @@ namespace _0_main
 
            //Intro i = new Intro(args);
            //test(args);
-          
-           Console.ReadKey();
+
            /*
            To add a project, first add a new folder naming it the [projectname]
            then type 
@@ -35,7 +35,17 @@ namespace _0_main
            dotnet add reference ../[projectname]/[projectname].csproj
 
            */
-        
+
+        }
+        static void CoffeeTest()
+        {
+            CoffeeMaker lifesaver = new CoffeeMaker();
+            lifesaver.AddGrains(5);
+            lifesaver.AddWater(12);
+            lifesaver.InsertFilter();
+            lifesaver.MakeCoffee();
+            Console.ReadKey();
+           
         }
         static void test(string [] args)
         {

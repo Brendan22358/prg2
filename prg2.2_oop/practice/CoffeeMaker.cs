@@ -61,5 +61,21 @@ namespace prg2._2_oop
                 water_amount+=WaterAmountToAdd;
             }
         }
+        public void MakeCoffee()
+        {
+            on_off = true;
+                if(water_amount == 0 || grains_amount == 0 || FilterIn == false)
+                {
+                    on_off = false;
+                    throw new Exception("No Coffee Produced, Insufficient materials.");
+                }
+                coffee_amount = water_amount;
+                water_amount = 0;
+                grains_amount = 0;
+                FilterIn = false;
+            on_off = false;
+        }
+
     }
 }
+
