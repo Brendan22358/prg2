@@ -1,4 +1,4 @@
-using System;
+/*using System;
 namespace prg2._2_oop
 {
     public class CoffeeMaker
@@ -69,7 +69,11 @@ namespace prg2._2_oop
                     on_off = false;
                     throw new Exception("No Coffee Produced, Insufficient materials.");
                 }
-                coffee_amount = water_amount;
+                else if(water_amount + coffee_amount > MAX_COFFEE_AMOUNT)
+                {
+                    throw new Exception("Watch out! You're about to overflow!");
+                }
+                coffee_amount += water_amount;
                 water_amount = 0;
                 grains_amount = 0;
                 FilterIn = false;
@@ -79,3 +83,4 @@ namespace prg2._2_oop
     }
 }
 
+*/

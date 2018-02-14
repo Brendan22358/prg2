@@ -12,10 +12,13 @@ namespace _0_main
     {
         static void Main(string[] args)
         {   
-            Console.WriteLine("Launching main");
-        
-            //hw2 now = new hw2();
-            //now.run();
+            Console.WriteLine("Launching main");        
+            Clock time = new Clock();
+            time.SetTime(6,23,57,true);
+            time.DisplayTime();
+            time.Tick(7,54,0);
+            time.DisplayTime();
+
 
           
             
@@ -37,7 +40,7 @@ namespace _0_main
            */
 
         }
-        static void CoffeeTest()
+       /* static void CoffeeTest()
         {
             CoffeeMaker lifesaver = new CoffeeMaker();
             lifesaver.AddGrains(5);
@@ -55,6 +58,7 @@ namespace _0_main
               Functional_Programming f = new Functional_Programming(args);
               Database_Design dd = new Database_Design(args);
         }
+         */
 
     }
 }
