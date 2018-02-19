@@ -27,7 +27,7 @@ namespace _0_main
 
 
 
-           //Intro i = new Intro(args);
+          // Intro i = new Intro(args);
            //test(args);
 
            /*
@@ -40,9 +40,9 @@ namespace _0_main
            */
 
         }
-       /* static void CoffeeTest()
+/*        static void CoffeeTest()
         {
-            CoffeeMaker lifesaver = new CoffeeMaker();
+            MrCoffee lifesaver = new MrCoffee();
             lifesaver.AddGrains(5);
             lifesaver.AddWater(12);
             lifesaver.InsertFilter();
@@ -58,7 +58,7 @@ namespace _0_main
               Functional_Programming f = new Functional_Programming(args);
               Database_Design dd = new Database_Design(args);
         }
-         */
+        */
 
     }
 }

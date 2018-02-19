@@ -1,7 +1,7 @@
-/*using System;
+using System;
 namespace prg2._2_oop
 {
-    public class CoffeeMaker
+    public class CoffeeMaker 
     {
         //This is a method, it is a constructor
         double water_amount;
@@ -61,7 +61,7 @@ namespace prg2._2_oop
                 water_amount+=WaterAmountToAdd;
             }
         }
-        public void MakeCoffee()
+        public virtual void MakeCoffee()
         {
             on_off = true;
                 if(water_amount == 0 || grains_amount == 0 || FilterIn == false)
@@ -83,4 +83,4 @@ namespace prg2._2_oop
     }
 }
 
-*/
+
