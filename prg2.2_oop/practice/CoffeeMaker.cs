@@ -1,86 +1,32 @@
 using System;
+using System.Collections.Generic;
 namespace prg2._2_oop
 {
-    public class CoffeeMaker 
+    public class CoffeeMaker : ConsumableMaker
     {
-        //This is a method, it is a constructor
-        double water_amount;
-        double MAX_WATER_AMOUNT;
-        double coffee_amount;
-        double MAX_COFFEE_AMOUNT;
-        bool on_off;
-        double grains_amount;
-        double MAX_GRAINS_AMOUNT;
-        bool FilterIn;
-        //hotplate
-
         public CoffeeMaker()
         {
-            water_amount = 0;
-            MAX_WATER_AMOUNT = 12;
-            coffee_amount = 0;
-            MAX_COFFEE_AMOUNT = 12;
-            grains_amount = 0;
-            MAX_GRAINS_AMOUNT = 6;
-            on_off = false;
-            FilterIn = true;
+        Ingredients = new Dictionary<System.Type, Consumable>();
+        MaxIngredients = new Dictionary<System.Type, double>();
+        Ingredients[typeof(Water)]= new Water();
+        Ingredients[typeof(Coffee)]= new Coffee();
+        Ingredients[typeof(Grain)]= new Grain();
         }
-        
-
-        public void AddGrains(double scoops_of_grains)
+        public void AddWater(double AmountOfWater)
         {
-            if(grains_amount + scoops_of_grains > MAX_GRAINS_AMOUNT)
-            {
-                throw new Exception("Put some of that back, thats too much!");
-            }
-            else
-            {
-                grains_amount = grains_amount + scoops_of_grains;
-            }
+            Ingredients[typeof(Water)].quantity += AmountOfWater;
         }
-        
+        public void AddGrains(double AmountOfGrains)
+        {
+            Ingredients[typeof(Grain)].quantity += AmountOfGrains;
+        }
         public void InsertFilter()
         {
-            if(FilterIn == true)
-            {
-                throw new Exception("Filter Already In!");
-            }
-            else
-            {
-                FilterIn = true;
-            }
-        }    
-        public void AddWater(double WaterAmountToAdd)
-        {
-            if(WaterAmountToAdd+water_amount>MAX_WATER_AMOUNT)
-            {
-                throw new Exception("Too much water!!!");
-            }
-            else
-            {
-                water_amount+=WaterAmountToAdd;
-            }
+            Ingredients[typeof(PaperFilter)].quantity += 1;
         }
-        public virtual void MakeCoffee()
+        public override Consumable Make()
         {
-            on_off = true;
-                if(water_amount == 0 || grains_amount == 0 || FilterIn == false)
-                {
-                    on_off = false;
-                    throw new Exception("No Coffee Produced, Insufficient materials.");
-                }
-                else if(water_amount + coffee_amount > MAX_COFFEE_AMOUNT)
-                {
-                    throw new Exception("Watch out! You're about to overflow!");
-                }
-                coffee_amount += water_amount;
-                water_amount = 0;
-                grains_amount = 0;
-                FilterIn = false;
-            on_off = false;
+            throw new NotImplementedException();
         }
-
     }
 }
-
-
