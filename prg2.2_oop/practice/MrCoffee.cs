@@ -10,11 +10,11 @@ namespace prg2._2_oop
         {
             CoffeeScheduled = time;
         }
-        public override void MakeCoffee()
+        public void MakeCoffee()
             {
                 if(DateTime.Now == CoffeeScheduled)
                 {
-                    base.MakeCoffee();
+                    MakeCoffee();
                 }
             }
     }

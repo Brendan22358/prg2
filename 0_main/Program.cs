@@ -10,55 +10,23 @@ namespace _0_main
 {
     class Program
     {
+          
         static void Main(string[] args)
         {   
-            Console.WriteLine("Launching main");        
-            Clock time = new Clock();
-            time.SetTime(6,23,57,true);
-            time.DisplayTime();
-            time.Tick(7,54,0);
-            time.DisplayTime();
-
-
-          
-            
-
-
-
-
-
-          // Intro i = new Intro(args);
-           //test(args);
-
-           /*
-           To add a project, first add a new folder naming it the [projectname]
-           then type 
-           dotnet new classlib -o [projectname]
-           then cd to 0_main and type
-           dotnet add reference ../[projectname]/[projectname].csproj
-
-           */
-
-        }
-/*        static void CoffeeTest()
-        {
-            MrCoffee lifesaver = new MrCoffee();
-            lifesaver.AddGrains(5);
-            lifesaver.AddWater(12);
-            lifesaver.InsertFilter();
-            lifesaver.MakeCoffee();
+            Console.WriteLine("Launching Main");
+            NodeTest();
             Console.ReadKey();
-           
         }
-        static void test(string [] args)
+        static void NodeTest()
         {
-              Intro i = new Intro(args);
-              OOP o = new OOP(args);
-              Design_Patterns d = new Design_Patterns(args);
-              Functional_Programming f = new Functional_Programming(args);
-              Database_Design dd = new Database_Design(args);
-        }
-        */
+            Console.WriteLine("I'm testing node");
+            string done = "";
 
+            while(done != "y")
+            {
+                Console.WriteLine("Are you done adding y/n?");
+                done = Console.ReadLine().ToLower()
+            }
+        }
     }
 }
