@@ -21,11 +21,22 @@ namespace _0_main
         {
             Console.WriteLine("I'm testing node");
             string done = "";
-
+            Node linkedList = new Node(0);
+            Node root = linkedList;
             while(done != "y")
             {
+                Console.WriteLine("Insert an integer for linked list");
+                int value = Convert.ToInt32(Console.ReadLine());
+                linkedList.next = new Node(value);
+                linkedList = linkedList.next;
                 Console.WriteLine("Are you done adding y/n?");
-                done = Console.ReadLine().ToLower()
+                done = Console.ReadLine().ToLower();
+            }
+            linkedList = root;
+            while(linkedList.next != null)
+            {
+                Console.WriteLine(linkedList.data);
+                linkedList = linkedList.next;
             }
         }
     }
