@@ -10,8 +10,7 @@ namespace _0_main
 {
     class Program
     {
-          
-        static void Main(string[] args)
+                  static void Main(string[] args)
         {   
             Console.WriteLine("Launching Main");
             NodeTest();
@@ -21,23 +20,27 @@ namespace _0_main
         {
             Console.WriteLine("I'm testing node");
             string done = "";
-            Node linkedList = new Node(0);
-            Node root = linkedList;
+            Node<double> n0 = new Node<double>(0.0);
+            Node<double> n1 = new Node<double>(1.0);
+            Node<int> linkedList = new Node<int>(0);
+            n0++;
+            n0.Print();
+            if(n0 == n1)
+            {
+                Console.WriteLine("They are equal");
+            }
+            Node<int> root = linkedList;
             while(done != "y")
             {
                 Console.WriteLine("Insert an integer for linked list");
                 int value = Convert.ToInt32(Console.ReadLine());
-                linkedList.next = new Node(value);
+                linkedList.next = new Node<int>(value,root);
                 linkedList = linkedList.next;
                 Console.WriteLine("Are you done adding y/n?");
                 done = Console.ReadLine().ToLower();
             }
-            linkedList = root;
-            while(linkedList.next != null)
-            {
-                Console.WriteLine(linkedList.data);
-                linkedList = linkedList.next;
-            }
+            linkedList.Print();
+            linkedList.PrintAll();
         }
     }
 }
