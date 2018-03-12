@@ -87,19 +87,51 @@ namespace prg2._2_oop
 
     public static class Swapper<T>
     {
-        public static  T NodeC;
+        public static T NodeC;
+
         public static void swap(Node<T> NodeA, Node<T> NodeB)
         {
+            if(NodesAreInSameList(NodeA,NodeB))
+            {
                 if(NodeA.root == NodeB.root)
                 {
-                    NodeC = NodeA.data;
-                    NodeA.data = NodeB.data;
-                    NodeB.data = NodeC;
+                    Node<T> iterator = NodeA;
+                    while(iterator != null)
+                    {
+                        iterator.root = NodeB;
+                        iterator++;
+                    }
                 }
-                else
+                else if(NodeB == NodeB.root)
                 {
-                    Console.WriteLine("They are not from the same linked list.");
+                    Node<T> iterator = NodeB.root;
+                    while(iterator != null)
+                    {
+                        iterator.root = NodeA;
+                        iterator++;
+                    }
                 }
+            }
+        }
+
+        private static bool NodesAreInSameList(Node<T> nodeA, Node<T> nodeB)
+        {
+            Node<T> iteratora = nodeA.root;
+            Node<T> iteratorb = nodeB.root;
+            while(iteratora != null && iteratorb != null)
+            {
+                if(iteratora != iteratorb)
+                {
+                    return false;
+                }
+                iteratora++;
+                iteratorb++;
+            }
+            if(iteratora != null && iteratorb != null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
