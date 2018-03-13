@@ -13,23 +13,13 @@ namespace _0_main
                   static void Main(string[] args)
         {   
             Console.WriteLine("Launching Main");
-            NodeTest();
+            HigherOrderTest();
             Console.ReadKey();
         }
-        static void NodeTest()
+        private static void HigherOrderTest()
         {
-            Console.WriteLine("I'm testing node");
-            Node<double> n0 = new Node<double>(0.0);
-            n0.next = new Node<double>(5.0,n0.root);
-            n0++;
-            n0.next = new Node<double>(15.0,n0.root);
-            n0++;
-            n0.Print(); 
-            n0 = n0.root;
-            Swapper<double>.swap(n0,n0.next);
-            n0.Print();  
-            n0 = n0.root;
-
+            Select s = new Select();
+            s.run();
         }
     }
 }
