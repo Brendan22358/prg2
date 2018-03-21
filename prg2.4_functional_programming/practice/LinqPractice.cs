@@ -15,5 +15,5 @@ public class LinqPractice
         List<string> STR1ng = str1ng.Intersect(STR1NG).ToList();
         Console.WriteLine(" ", STR1ng.ToArray());
     }
-    
+
 }
